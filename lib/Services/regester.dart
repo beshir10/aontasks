@@ -1,60 +1,70 @@
-import 'package:aontasks/Services/regester.dart';
 import 'package:aontasks/homePage.dart';
+import 'package:aontasks/loginPage.dart';
 import 'package:flutter/material.dart';
 
-class Loginpage extends StatefulWidget {
-  const Loginpage({super.key});
+
+class Regester extends StatefulWidget {
+  const Regester({super.key});
 
   @override
-  State<Loginpage> createState() => _LoginpageState();
+  State<Regester> createState() => _RegesterState();
 }
 
-class _LoginpageState extends State<Loginpage> {
+class _RegesterState extends State<Regester> {
   bool PassTogle=true;
   TextEditingController email =TextEditingController();
-
-  Color buttonColor = Colors.blue;
-
-  void _changeColor() {
-    setState(() {
-      buttonColor = buttonColor == Colors.blue ? Colors.green : Colors.blue;
-    });
-  }
+  TextEditingController name =TextEditingController();
+  TextEditingController password =TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      body: 
-      Column(
+
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Text('Log In',
+            child: Text('Regester',
               style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold
               ),),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 30,),
+
+          Padding(
+            padding: EdgeInsets.only(left: 20,right: 20),
+            child: TextFormField(
+              controller:name ,
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.email_outlined),
+                  hintText: 'Name',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10)
+                  )
+              ),),
+          ),
+
           Padding(
             padding: EdgeInsets.all(20),
             child: TextFormField(
               controller:email ,
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.email_outlined),
-                hintText: 'Email sddress',
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                )
-            ),),
+                  prefixIcon: Icon(Icons.email_outlined),
+                  hintText: 'Email sddress',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10)
+                  )
+              ),),
           ),
 
 
           Padding(
             padding: const EdgeInsets.only(left: 20,right: 20,),
             child: TextFormField(
+              controller: password,
               obscureText: PassTogle,
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.lock),
@@ -79,17 +89,18 @@ class _LoginpageState extends State<Loginpage> {
           SizedBox(height: 25,),
           ElevatedButton(onPressed:(){
             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context)=>Homepage())
+              MaterialPageRoute(builder: (context)=>Homepage())
             );
           },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.purple.shade800,
-                  fixedSize: Size(MediaQuery.of(context).size.width-40, 60),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                fixedSize: Size(MediaQuery.of(context).size.width-40, 60),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
 
-                  ),
-                  // backgroundColor: Colors.purple.shade800
+
+                ),
+                // backgroundColor: Colors.purple.shade800
               ),
               child: Text('Login',
                 style: TextStyle(
@@ -102,15 +113,14 @@ class _LoginpageState extends State<Loginpage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Dont have an account?'),
+              Text('Have an account?'),
               SizedBox(width: 3,),
 
               InkWell(onTap: (){
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context)=>Regester())
-                );
-              },
-                child:Text('Sign Up',
+                  MaterialPageRoute(builder: (context)=>Loginpage())
+              );},
+                child:Text('Login',
                   style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -164,6 +174,6 @@ class _LoginpageState extends State<Loginpage> {
 
         ],
       ),
-    );;
+    );
   }
 }
