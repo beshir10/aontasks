@@ -1,5 +1,6 @@
-import 'package:aontasks/homePage.dart';
-import 'package:aontasks/loginPage.dart';
+import 'package:aontasks/Screens/homePage.dart';
+import 'package:aontasks/auth/loginPage.dart';
+import 'package:aontasks/bnb.dart';
 import 'package:flutter/material.dart';
 
 
@@ -89,7 +90,7 @@ class _RegesterState extends State<Regester> {
           SizedBox(height: 25,),
           ElevatedButton(onPressed:(){
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (context)=>Homepage())
+              MaterialPageRoute(builder: (context)=>BNB())
             );
           },
               style: ElevatedButton.styleFrom(

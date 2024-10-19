@@ -1,5 +1,6 @@
-import 'package:aontasks/regester.dart';
-import 'package:aontasks/homePage.dart';
+import 'package:aontasks/auth/regester.dart';
+import 'package:aontasks/Screens/homePage.dart';
+import 'package:aontasks/bnb.dart';
 import 'package:flutter/material.dart';
 
 class Loginpage extends StatefulWidget {
@@ -101,7 +102,7 @@ class _LoginpageState extends State<Loginpage> {
 
               InkWell(onTap: (){
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context)=>Regester())
+                    MaterialPageRoute(builder: (context)=>BNB())
                 );
               },
                 child:Text('Sign Up',

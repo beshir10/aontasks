@@ -1,5 +1,7 @@
-import 'package:aontasks/Services/regester.dart';
-import 'package:aontasks/loginPage.dart';
+import 'package:aontasks/auth/regester.dart';
+import 'package:aontasks/Screens/homePage.dart';
+import 'package:aontasks/auth/loginPage.dart';
+import 'package:aontasks/bnb.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:Loginpage(),
+      home:BNB(),
     );
   }
 }
