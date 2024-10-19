@@ -1,4 +1,4 @@
-import 'package:aontasks/Services/regester.dart';
+import 'package:aontasks/regester.dart';
 import 'package:aontasks/homePage.dart';
 import 'package:flutter/material.dart';
 
@@ -12,14 +12,6 @@ class Loginpage extends StatefulWidget {
 class _LoginpageState extends State<Loginpage> {
   bool PassTogle=true;
   TextEditingController email =TextEditingController();
-
-  Color buttonColor = Colors.blue;
-
-  void _changeColor() {
-    setState(() {
-      buttonColor = buttonColor == Colors.blue ? Colors.green : Colors.blue;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +61,11 @@ class _LoginpageState extends State<Loginpage> {
                   child: Icon(PassTogle?Icons.visibility : Icons.visibility_off),),
               ),),
           ),
+
+
+
           Padding(
-            padding: const EdgeInsets.only(right: 20,top: 10),
+            padding:  EdgeInsets.only(right: 20,top: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [Text('Forgot Password?')],
@@ -89,7 +84,6 @@ class _LoginpageState extends State<Loginpage> {
                     borderRadius: BorderRadius.circular(10),
 
                   ),
-                  // backgroundColor: Colors.purple.shade800
               ),
               child: Text('Login',
                 style: TextStyle(
