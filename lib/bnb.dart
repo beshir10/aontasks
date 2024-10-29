@@ -1,5 +1,7 @@
 import 'package:aontasks/Screens/profile.dart';
 import 'package:aontasks/auth/loginPage.dart';
+import 'package:aontasks/khamsat/khamsatHome.dart';
+import 'package:aontasks/khamsat/program.dart';
 import 'package:flutter/material.dart';
 import 'package:aontasks/Screens/homePage.dart';
 
@@ -15,7 +17,8 @@ class _BNBState extends State<BNB> {
   int _selectedindex = 0;
 
   List<Widget> _pages = [
-    Homepage(),
+    Khamsathome(),
+    Program(),
     Loginpage(),
     Profile()
   ];
@@ -37,23 +40,33 @@ class _BNBState extends State<BNB> {
         children: _pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blue.shade900,
-        selectedItemColor: Colors.cyan,
-        unselectedItemColor: Colors.cyan,
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.black,
+        showUnselectedLabels: true,
 
         items: const <BottomNavigationBarItem>[
+
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'الرئيسيه',
           ),
 
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: 'حسابي',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Setting',
+            icon: Icon(Icons.search),
+            label: 'بحث',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'السله',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu),
+            label: 'القائمه',
           ),
 
 

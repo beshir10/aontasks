@@ -33,7 +33,8 @@ class _LoginpageState extends State<Loginpage> {
           SizedBox(height: 20,),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextFormField(
+            child:
+            TextFormField(
               controller:email ,
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.email_outlined),
@@ -47,7 +48,8 @@ class _LoginpageState extends State<Loginpage> {
 
           Padding(
             padding: const EdgeInsets.only(left: 20,right: 20,),
-            child: TextFormField(
+            child:
+            TextFormField(
               obscureText: PassTogle,
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.lock),
